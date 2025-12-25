@@ -12,10 +12,10 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Rubén Aguilar Becerra | Senior Software Engineer</title>
+        <title>Rubén Aguilar | Senior Software Engineer</title>
         <meta name="description" content="Senior Software Engineer at Miro specializing in AI, full-stack development, and technical leadership. Based in Barcelona, Spain." />
         <meta name="keywords" content="Software Engineer, React, TypeScript, Technical Lead, Barcelona, Miro, AI" />
-        <meta property="og:title" content="Rubén Aguilar Becerra | Senior Software Engineer" />
+        <meta property="og:title" content="Rubén Aguilar | Senior Software Engineer" />
         <meta property="og:description" content="Senior Software Engineer at Miro specializing in AI, full-stack development, and technical leadership." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://rubenaguilarbecerra.com" />
