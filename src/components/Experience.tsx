@@ -49,7 +49,7 @@ const experiences: ExperienceItem[] = [
     ]
   },
   {
-    company: "Vista (Vistaprint)",
+    company: "Vista",
     logo: vistaLogo,
     roles: [
       {
@@ -82,7 +82,7 @@ const experiences: ExperienceItem[] = [
     ]
   },
   {
-    company: "HP",
+    company: "Hewlett Packard",
     logo: hpLogo,
     roles: [
       {
