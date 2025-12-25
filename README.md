@@ -72,11 +72,13 @@ This repo ships with `.github/workflows/deploy.yml`, which builds the site with 
 2. The workflow uploads the generated static assets and deploys them with `actions/deploy-pages`.
 3. The first time you run it, enable Pages in your repo settings and point it at the `github-pages` environment.
 
-The build uses the `VITE_PUBLIC_BASE_PATH` environment variable to align Vite's `base` option with the repository name (defaults to `/my-professional-hub/` in CI). If you need to preview a production build locally, run:
+The build uses the `VITE_PUBLIC_BASE_PATH` environment variable to align Vite's `base` option with the repository name. By default it resolves to `/${repo-name}/`, but you can override it by creating a repository variable named `GH_PAGES_BASE_PATH` (for example set it to `/` when serving a custom domain at the root). If you need to preview a production build locally, run:
 
 ```sh
 VITE_PUBLIC_BASE_PATH=/my-professional-hub/ npm run build && npm run preview
 ```
+
+If you are using a custom domain, add a `public/CNAME` file containing that domain (for example `raguilar.dev`) so GitHub Pages keeps the mapping consistent.
 
 ## Can I connect a custom domain to my Lovable project?
 
