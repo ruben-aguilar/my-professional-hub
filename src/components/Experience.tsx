@@ -124,7 +124,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 relative bg-secondary/20">
       <div className="container px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -133,55 +133,44 @@ const Experience = () => {
             <div className="section-divider" />
           </div>
           
-          {/* Timeline */}
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-            
-            {experiences.map((exp, expIndex) => (
-              <div key={exp.company} className="mb-12 last:mb-0">
-                {exp.roles.map((role, roleIndex) => (
-                  <div 
-                    key={`${exp.company}-${roleIndex}`}
-                    className={`relative pl-8 md:pl-0 md:w-1/2 ${
-                      expIndex % 2 === 0 ? 'md:pr-12 md:ml-auto' : 'md:pl-12'
-                    } mb-8 last:mb-0`}
-                  >
-                    {/* Timeline dot */}
-                    <div className={`absolute left-0 md:left-auto ${
-                      expIndex % 2 === 0 ? 'md:-left-3' : 'md:-right-3'
-                    } top-2 w-6 h-6 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center`}>
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                    </div>
-                    
-                    {/* Content card */}
-                    <div className="card-elevated rounded-xl p-6 hover:border-primary/30 border border-transparent transition-all duration-300">
-                      {roleIndex === 0 && (
-                        <div className="flex items-center gap-2 mb-3">
-                          <Briefcase className="w-4 h-4 text-primary" />
-                          <span className="font-bold text-primary">{exp.company}</span>
-                        </div>
-                      )}
-                      
-                      <h3 className="font-semibold text-lg mb-1">{role.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-2">{role.period}</p>
+          {/* Experience list */}
+          <div className="space-y-6">
+            {experiences.map((exp) => (
+              <div 
+                key={exp.company} 
+                className="card-elevated rounded-xl p-6 hover:border-primary/30 border border-transparent transition-all duration-300"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <Briefcase className="w-5 h-5 text-primary" />
+                  <span className="font-bold text-lg text-primary">{exp.company}</span>
+                </div>
+                
+                <div className="space-y-4">
+                  {exp.roles.map((role, roleIndex) => (
+                    <div 
+                      key={`${exp.company}-${roleIndex}`}
+                      className={roleIndex > 0 ? "pt-4 border-t border-border/50" : ""}
+                    >
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                        <h3 className="font-semibold">{role.title}</h3>
+                        <span className="text-sm text-muted-foreground">{role.period}</span>
+                      </div>
                       {role.location && (
-                        <p className="text-xs text-muted-foreground mb-3">{role.location}</p>
+                        <p className="text-xs text-muted-foreground mb-2">{role.location}</p>
                       )}
-                      
                       {role.description && (
-                        <ul className="space-y-1">
+                        <ul className="mt-2 space-y-1">
                           {role.description.map((item, i) => (
                             <li key={i} className="text-sm text-muted-foreground flex gap-2">
-                              <span className="text-primary mt-1.5">•</span>
+                              <span className="text-primary mt-0.5">•</span>
                               <span>{item}</span>
                             </li>
                           ))}
                         </ul>
                       )}
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             ))}
           </div>
