@@ -25,7 +25,6 @@ const experiences: ExperienceItem[] = [
       {
         title: "Senior Software Engineer - AI",
         period: "Jan 2023 - Present",
-        location: "Remote",
         description: [
           "Bringing AI to Miro's Canvas by integrating unique UX patterns with state-of-the-art LLMs for intelligent content generation",
           "Leading the tech team behind Sidekicks — Miro's AI Assistant that helps users brainstorm, summarize, and create directly on the board"
@@ -63,7 +62,6 @@ const experiences: ExperienceItem[] = [
       {
         title: "Lead Software Engineer - Large Assortment",
         period: "Jul 2019 - Oct 2021",
-        location: "Barcelona, Spain",
         description: [
           "Leading teams to offer ~4000 PPAG products in the main Vistaprint site"
         ]
@@ -71,7 +69,6 @@ const experiences: ExperienceItem[] = [
       {
         title: "Senior Software Engineer",
         period: "Sep 2017 - Jul 2019",
-        location: "Barcelona, Spain",
         description: [
           "Implemented new checkout option increasing conversion rate substantially",
           "Built new Product Page based on ReactJs as independent MFE",
@@ -88,7 +85,6 @@ const experiences: ExperienceItem[] = [
       {
         title: "R&D Software Engineer",
         period: "Oct 2015 - Sep 2017",
-        location: "Sant Cugat del Vallés",
         description: [
           "Migrated frontend app for HP's large format Latex printers from Windows Forms to AngularJs",
           "Implemented core image processing pipelines for HP Latex R series",
@@ -97,8 +93,7 @@ const experiences: ExperienceItem[] = [
       },
       {
         title: "R&D Software Engineer (Inno+talent25)",
-        period: "Jan 2014 - Sep 2015",
-        location: "Sant Cugat del Vallés"
+        period: "Jan 2014 - Sep 2015"
       }
     ]
   },
@@ -120,7 +115,6 @@ const experiences: ExperienceItem[] = [
       {
         title: "Software Engineer",
         period: "Aug 2012 - Apr 2013",
-        location: "Granada, Spain",
         description: [
           "R&D of Busbaar system for Volvo",
           "Designed communication protocols (Bluetooth, CAN, V2G) between buses and charge stations"
