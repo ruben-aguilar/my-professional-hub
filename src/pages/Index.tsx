@@ -1,13 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>Rubén Aguilar Becerra | Senior Software Engineer</title>
+        <meta name="description" content="Senior Software Engineer at Miro specializing in AI, full-stack development, and technical leadership. Based in Barcelona, Spain." />
+        <meta name="keywords" content="Software Engineer, React, TypeScript, Technical Lead, Barcelona, Miro, AI" />
+        <meta property="og:title" content="Rubén Aguilar Becerra | Senior Software Engineer" />
+        <meta property="og:description" content="Senior Software Engineer at Miro specializing in AI, full-stack development, and technical leadership." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://rubenaguilarbecerra.com" />
+      </Helmet>
+      
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Education />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
