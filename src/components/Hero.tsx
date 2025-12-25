@@ -18,7 +18,7 @@ const Hero = () => {
               <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/30 glow-accent mx-auto">
                 <img 
                   src={profilePhoto} 
-                  alt="Rubén Aguilar Becerra" 
+                  alt="Rubén Aguilar"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -35,8 +35,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up opacity-0 animation-delay-200">
-            Rubén Aguilar{" "}
-            <span className="gradient-text">Becerra</span>
+            Rubén <span className="gradient-text">Aguilar</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-300">
