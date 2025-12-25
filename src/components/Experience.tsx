@@ -1,7 +1,14 @@
 import { Briefcase } from "lucide-react";
 
+// Company logos
+import miroLogo from "@/assets/logos/miro.jpg";
+import hopinLogo from "@/assets/logos/hopin.png";
+import vistaLogo from "@/assets/logos/vista.png";
+import hpLogo from "@/assets/logos/hp.png";
+
 interface ExperienceItem {
   company: string;
+  logo?: string;
   roles: {
     title: string;
     period: string;
@@ -13,6 +20,7 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     company: "Miro",
+    logo: miroLogo,
     roles: [
       {
         title: "Senior Software Engineer - AI",
@@ -27,6 +35,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Hopin",
+    logo: hopinLogo,
     roles: [
       {
         title: "Staff Software Engineer - Platform & DevEx",
@@ -41,6 +50,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Vista (Vistaprint)",
+    logo: vistaLogo,
     roles: [
       {
         title: "Lead Software Engineer - Personalization",
@@ -73,6 +83,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "HP",
+    logo: hpLogo,
     roles: [
       {
         title: "R&D Software Engineer",
@@ -139,8 +150,18 @@ const Experience = () => {
                 key={exp.company} 
                 className="card-elevated rounded-xl p-6 hover:border-primary/30 border border-transparent transition-all duration-300"
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <Briefcase className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-3 mb-4">
+                  {exp.logo ? (
+                    <img 
+                      src={exp.logo} 
+                      alt={`${exp.company} logo`} 
+                      className="w-8 h-8 rounded-md object-cover"
+                    />
+                  ) : (
+                    <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center">
+                      <Briefcase className="w-4 h-4 text-primary" />
+                    </div>
+                  )}
                   <span className="font-bold text-lg text-primary">{exp.company}</span>
                 </div>
                 
