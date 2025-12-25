@@ -16,13 +16,12 @@ const experiences: ExperienceItem[] = [
     roles: [
       {
         title: "Senior Software Engineer - AI",
-        period: "Apr 2024 - Present",
-        location: "Remote"
-      },
-      {
-        title: "Senior Software Engineer - Enterprise",
-        period: "Jan 2023 - Mar 2024",
-        location: "Remote"
+        period: "Jan 2023 - Present",
+        location: "Remote",
+        description: [
+          "Bringing AI to Miro's Canvas by integrating unique UX patterns with state-of-the-art LLMs for intelligent content generation",
+          "Leading the tech team behind Sidekicks — Miro's AI Assistant that helps users brainstorm, summarize, and create directly on the board"
+        ]
       }
     ]
   },
