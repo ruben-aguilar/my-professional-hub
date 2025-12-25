@@ -64,6 +64,20 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
+### Deploying to GitHub Pages
+
+This repo ships with `.github/workflows/deploy.yml`, which builds the site with Vite and publishes the `dist` folder to GitHub Pages.
+
+1. Push to `main` (or run the workflow manually) to trigger the deployment pipeline.
+2. The workflow uploads the generated static assets and deploys them with `actions/deploy-pages`.
+3. The first time you run it, enable Pages in your repo settings and point it at the `github-pages` environment.
+
+The build uses the `VITE_PUBLIC_BASE_PATH` environment variable to align Vite's `base` option with the repository name (defaults to `/my-professional-hub/` in CI). If you need to preview a production build locally, run:
+
+```sh
+VITE_PUBLIC_BASE_PATH=/my-professional-hub/ npm run build && npm run preview
+```
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
