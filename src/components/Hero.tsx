@@ -1,14 +1,16 @@
-import { Mail, Phone, Linkedin, MapPin, ChevronDown } from "lucide-react";
+import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
+
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return (
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20" />
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       
-      <div className="container relative z-10 px-4 py-20">
+      <div className="container relative z-10 px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile Photo */}
           <div className="animate-slide-up opacity-0 mb-8">
@@ -18,8 +20,8 @@ const Hero = () => {
               </div>
               {/* Decorative ring */}
               <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-pulse" style={{
-              transform: 'scale(1.15)'
-            }} />
+                transform: 'scale(1.15)'
+              }} />
             </div>
           </div>
           
@@ -34,7 +36,9 @@ const Hero = () => {
             Rubén <span className="gradient-text">Aguilar</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-300">Creating value through code. From low-level systems to modern web applications and AI.</p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-300">
+            Creating value through code. From low-level systems to modern web applications and AI.
+          </p>
           
           {/* Location */}
           <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8 animate-slide-up opacity-0 animation-delay-400">
@@ -66,12 +70,9 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-          <ChevronDown className="w-6 h-6 text-primary" />
-        </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
