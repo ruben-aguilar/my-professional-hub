@@ -55,14 +55,14 @@ const Hero = () => {
               </a>
             </Button>
             
-            <Button variant="outline" size="lg" className="border-border hover:border-primary hover:text-primary transition-colors" asChild>
+            <Button variant="outline" size="lg" className="border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all" asChild>
               <a href="https://www.linkedin.com/in/ruben-aguilar-becerra" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
               </a>
             </Button>
             
-            <Button variant="outline" size="lg" className="border-border hover:border-primary hover:text-primary transition-colors" asChild>
+            <Button variant="outline" size="lg" className="border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all" asChild>
               <a href="tel:+34717717389">
                 <Phone className="w-4 h-4 mr-2" />
                 Call
