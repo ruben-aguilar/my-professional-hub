@@ -1,19 +1,19 @@
 const skillCategories = [
   {
     title: "Frontend",
-    skills: ["React", "TypeScript", "NextJs", "AngularJs", "GatsbyJs", "JavaScript", "HTML/CSS", "Tailwind"]
+    skills: ["React", "TypeScript", "NextJs", "JavaScript", "HTML/CSS"]
   },
   {
     title: "Backend",
-    skills: ["Node.js", ".NET", "C#", "C++", "Python", "REST APIs", "GraphQL"]
+    skills: ["Node.js", "Kotlin", "LLMs integration", "LLMOps", "Kubernetes"]
   },
   {
     title: "Tools & Platforms",
-    skills: ["Git", "Docker", "AWS", "Algolia", "Contentful", "A/B Testing"]
+    skills: ["Git", "Docker", "AWS", "Claude Code", "Cursor"]
   },
   {
     title: "Practices",
-    skills: ["TDD", "Agile", "Code Review", "Mentoring", "Technical Leadership", "System Design"]
+    skills: ["TDD", "AI Assisted Coding", "Mentoring", "System Design"]
   }
 ];
 
