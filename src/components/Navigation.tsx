@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -8,6 +9,7 @@ const navItems = [
   { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const Navigation = () => {
@@ -33,21 +35,31 @@ const Navigation = () => {
       <div className="container px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="font-bold text-xl">
+          <Link to="/" className="font-bold text-xl">
             R<span className="text-primary">.</span>A
-          </a>
+          </Link>
           
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a 
-                key={item.href}
-                href={item.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => 
+              item.href.startsWith('/') ? (
+                <Link 
+                  key={item.href}
+                  to={item.href}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a 
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </div>
           
           {/* Mobile menu button */}
@@ -67,16 +79,27 @@ const Navigation = () => {
         <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
           <div className="container px-4 py-4">
             <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a 
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) => 
+                item.href.startsWith('/') ? (
+                  <Link 
+                    key={item.href}
+                    to={item.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a 
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )
+              )}
             </div>
           </div>
         </div>
