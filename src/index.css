@@ -98,6 +98,121 @@
     @apply w-24 h-1 rounded-full mx-auto;
     background-image: var(--gradient-accent);
   }
+
+  /* Prose styles for markdown content */
+  .prose-blog {
+    @apply text-foreground leading-relaxed;
+  }
+
+  .prose-blog h1,
+  .prose-blog h2,
+  .prose-blog h3,
+  .prose-blog h4,
+  .prose-blog h5,
+  .prose-blog h6 {
+    @apply font-semibold text-foreground mt-8 mb-4;
+  }
+
+  .prose-blog h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  .prose-blog h2 {
+    @apply text-2xl md:text-3xl border-b border-border pb-2;
+  }
+
+  .prose-blog h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  .prose-blog p {
+    @apply mb-4 text-foreground/90;
+  }
+
+  .prose-blog a {
+    @apply text-primary underline underline-offset-4 hover:text-primary/80 transition-colors;
+  }
+
+  .prose-blog strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose-blog em {
+    @apply italic;
+  }
+
+  .prose-blog del {
+    @apply line-through text-muted-foreground;
+  }
+
+  .prose-blog blockquote {
+    @apply border-l-4 border-primary pl-4 py-2 my-4 bg-muted/30 rounded-r-lg italic text-muted-foreground;
+  }
+
+  .prose-blog blockquote p {
+    @apply mb-0;
+  }
+
+  .prose-blog ul {
+    @apply list-disc list-outside pl-6 mb-4 space-y-2;
+  }
+
+  .prose-blog ol {
+    @apply list-decimal list-outside pl-6 mb-4 space-y-2;
+  }
+
+  .prose-blog li {
+    @apply text-foreground/90;
+  }
+
+  .prose-blog li > ul,
+  .prose-blog li > ol {
+    @apply mt-2 mb-0;
+  }
+
+  .prose-blog code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-primary;
+  }
+
+  .prose-blog pre {
+    @apply bg-muted border border-border rounded-lg p-4 my-4 overflow-x-auto;
+  }
+
+  .prose-blog pre code {
+    @apply bg-transparent p-0 text-foreground;
+  }
+
+  .prose-blog table {
+    @apply w-full border-collapse my-4 text-sm;
+  }
+
+  .prose-blog thead {
+    @apply bg-muted;
+  }
+
+  .prose-blog th {
+    @apply border border-border px-4 py-2 text-left font-semibold text-foreground;
+  }
+
+  .prose-blog td {
+    @apply border border-border px-4 py-2 text-foreground/90;
+  }
+
+  .prose-blog tr:nth-child(even) {
+    @apply bg-muted/30;
+  }
+
+  .prose-blog hr {
+    @apply my-8 border-border;
+  }
+
+  .prose-blog img {
+    @apply rounded-lg my-4 max-w-full h-auto;
+  }
+
+  .prose-blog input[type="checkbox"] {
+    @apply mr-2 accent-primary;
+  }
 }
 
 @layer utilities {
