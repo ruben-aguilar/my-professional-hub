@@ -41,25 +41,21 @@ const Navigation = () => {
           
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => 
-              item.href.startsWith('/') ? (
-                <Link 
-                  key={item.href}
-                  to={item.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a 
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </a>
-              )
-            )}
+            {navItems.filter(item => item.href !== '/blog').map((item) => (
+              <a 
+                key={item.href}
+                href={item.href}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+            <Link 
+              to="/blog"
+              className="text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Blog
+            </Link>
           </div>
           
           {/* Mobile menu button */}
@@ -79,27 +75,23 @@ const Navigation = () => {
         <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
           <div className="container px-4 py-4">
             <div className="flex flex-col gap-4">
-              {navItems.map((item) => 
-                item.href.startsWith('/') ? (
-                  <Link 
-                    key={item.href}
-                    to={item.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <a 
-                    key={item.href}
-                    href={item.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                )
-              )}
+              {navItems.filter(item => item.href !== '/blog').map((item) => (
+                <a 
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <Link 
+                to="/blog"
+                className="text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
             </div>
           </div>
         </div>
