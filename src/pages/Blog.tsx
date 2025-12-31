@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { getAllPosts } from "@/lib/blog";
 import { Calendar } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import BlogHeader from "@/components/BlogHeader";
 import Footer from "@/components/Footer";
 
 const Blog = () => {
@@ -9,7 +9,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <BlogHeader />
       <main className="pt-24 pb-16">
         <div className="container max-w-5xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
