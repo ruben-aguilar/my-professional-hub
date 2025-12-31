@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { getPostBySlug } from "@/lib/blog";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { ArrowLeft, Calendar } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -61,7 +62,7 @@ const BlogPost = () => {
           </header>
 
           <div className="prose-blog">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
           </div>
         </article>
       </main>
