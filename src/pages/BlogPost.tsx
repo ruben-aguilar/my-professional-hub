@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { ArrowLeft, Calendar } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import MermaidDiagram from "@/components/MermaidDiagram";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -62,7 +63,40 @@ const BlogPost = () => {
           </header>
 
           <div className="prose-blog">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                code({ node, className, children, ...props }) {
+                  const match = /language-(\w+)/.exec(className || "");
+                  const language = match ? match[1] : "";
+                  const codeContent = String(children).replace(/\n$/, "");
+
+                  // Check if it's a mermaid code block
+                  if (language === "mermaid") {
+                    return <MermaidDiagram chart={codeContent} />;
+                  }
+
+                  // Check if it's an inline code or block code
+                  const isInline = !className && !codeContent.includes("\n");
+
+                  if (isInline) {
+                    return (
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    );
+                  }
+
+                  return (
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  );
+                },
+              }}
+            >
+              {post.content}
+            </ReactMarkdown>
           </div>
         </article>
       </main>

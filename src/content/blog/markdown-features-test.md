@@ -181,6 +181,43 @@ For algorithms, Big O notation like `O(n log n)` is common.
 💡 Great idea
 ⚠️ Warning message
 
+## Mermaid Diagrams
+
+You can create diagrams using Mermaid syntax:
+
+### Flowchart
+
+```mermaid
+graph TD
+    A[Start] --> B{Is it working?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> B
+    C --> E[End]
+```
+
+### Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant App
+    participant API
+    User->>App: Click button
+    App->>API: Send request
+    API-->>App: Return data
+    App-->>User: Display result
+```
+
+### Entity Relationship
+
+```mermaid
+erDiagram
+    USER ||--o{ POST : writes
+    POST ||--|{ COMMENT : has
+    USER ||--o{ COMMENT : writes
+```
+
 ## Summary
 
 This post covers:
@@ -191,6 +228,7 @@ This post covers:
 - Lists (ordered, unordered, task lists)
 - Tables with alignment
 - Horizontal rules
+- Mermaid diagrams
 - And more!
 
 Feel free to use this as a template for your own blog posts.
