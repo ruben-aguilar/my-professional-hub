@@ -60,7 +60,7 @@ const BlogPost = () => {
             </div>
           </header>
 
-          <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-semibold prose-a:text-primary prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-muted prose-pre:border prose-pre:border-border">
+          <div className="prose-blog">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </div>
         </article>
