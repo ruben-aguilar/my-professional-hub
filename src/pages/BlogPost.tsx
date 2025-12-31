@@ -3,7 +3,7 @@ import { getPostBySlug } from "@/lib/blog";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft, Calendar } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import BlogHeader from "@/components/BlogHeader";
 import Footer from "@/components/Footer";
 import MermaidDiagram from "@/components/MermaidDiagram";
 
@@ -14,7 +14,7 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-background">
-        <Navigation />
+        <BlogHeader />
         <main className="pt-24 pb-16">
           <div className="container max-w-3xl mx-auto px-6 text-center">
             <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
@@ -37,7 +37,7 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <BlogHeader />
       <main className="pt-24 pb-16">
         <article className="container max-w-3xl mx-auto px-6">
           <Link
