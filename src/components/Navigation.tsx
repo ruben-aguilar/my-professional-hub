@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -9,12 +9,13 @@ const navItems = [
   { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
-  { label: "Blog", href: "/blog" },
 ];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+  const showBlog = searchParams.get("blog") === "true";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +42,7 @@ const Navigation = () => {
           
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.filter(item => item.href !== '/blog').map((item) => (
+            {navItems.map((item) => (
               <a 
                 key={item.href}
                 href={item.href}
@@ -50,12 +51,14 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Link 
-              to="/blog"
-              className="text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Blog
-            </Link>
+            {showBlog && (
+              <Link 
+                to="/blog"
+                className="text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Blog
+              </Link>
+            )}
           </div>
           
           {/* Mobile menu button */}
@@ -75,7 +78,7 @@ const Navigation = () => {
         <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border">
           <div className="container px-4 py-4">
             <div className="flex flex-col gap-4">
-              {navItems.filter(item => item.href !== '/blog').map((item) => (
+              {navItems.map((item) => (
                 <a 
                   key={item.href}
                   href={item.href}
@@ -85,13 +88,15 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Link 
-                to="/blog"
-                className="text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-center"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Blog
-              </Link>
+              {showBlog && (
+                <Link 
+                  to="/blog"
+                  className="text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+              )}
             </div>
           </div>
         </div>
